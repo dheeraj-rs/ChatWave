@@ -1,9 +1,88 @@
-import React from 'react'
+import React from "react";
+import { Image, Nav } from "react-bootstrap";
+import logo from "../assets/logo.png";
+import user from "../assets/user.png";
+import LayersIcon from "@mui/icons-material/Layers";
+import SettingsIcon from "@mui/icons-material/Settings";
+import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
+import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
+import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
+import PolylineIcon from "@mui/icons-material/Polyline";
 
 function Dashboard() {
+
+  const iconStyle = {
+    fontSize: "30px",
+    color: "action",
+  };
+
   return (
-    <div>Dashboard</div>
-  )
+    <Nav
+      className="flex-column justify-content-between align-items-center"
+      style={{
+        width: "100px",
+        height: "100vh",
+        boxShadow: "0px 0px 2px rgba(0, 0, 0, 0.25)",
+      }}
+    >
+      <Nav.Item>
+        <Nav.Link href="/home">
+          <Image
+            src={logo}
+            alt="Logo"
+            fluid
+            roundedCircle
+            className="w-100 h-75"
+          />
+        </Nav.Link>
+      </Nav.Item>
+      <div className="d-flex flex-column gap-4">
+        <Nav.Item>
+          <Nav.Link eventKey="link-1">
+            <PolylineIcon style={iconStyle} />
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link eventKey="link-2">
+            <PeopleAltIcon style={iconStyle} />
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link eventKey="link-3">
+            <ChatBubbleOutlineIcon style={iconStyle} />
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link eventKey="link-4">
+            <NotificationsNoneIcon style={iconStyle} />
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link eventKey="link-5">
+            <SettingsIcon style={iconStyle} />
+          </Nav.Link>
+        </Nav.Item>
+      </div>
+      <div className="d-flex flex-column gap-4 align-items-center justify-content-center">
+        <Nav.Item>
+          <Nav.Link eventKey="link-6">
+            <LayersIcon style={iconStyle} />
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link eventKey="logo">
+            <Image
+              src={user}
+              alt="User"
+              fluid
+              roundedCircle
+              className="w-100 h-75 bg-body-secondary"
+            />
+          </Nav.Link>
+        </Nav.Item>
+      </div>
+    </Nav>
+  );
 }
 
-export default Dashboard
+export default Dashboard;
