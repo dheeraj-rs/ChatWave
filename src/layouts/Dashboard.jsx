@@ -1,7 +1,7 @@
 import React from "react";
 import { Image, Nav } from "react-bootstrap";
-import logo from "../assets/logo.png";
-import user from "../assets/user.png";
+import logo from "../assets/icons/logo.png";
+import profile from "../assets/images/profile.png";
 import LayersIcon from "@mui/icons-material/Layers";
 import SettingsIcon from "@mui/icons-material/Settings";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
@@ -10,19 +10,18 @@ import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import PolylineIcon from "@mui/icons-material/Polyline";
 
 function Dashboard() {
-
   const iconStyle = {
     fontSize: "30px",
-    color: "action",
+    color: "#505050",
   };
 
   return (
     <Nav
-      className="flex-column justify-content-between align-items-center"
+      className="flex-column justify-content-between align-items-center d-none d-lg-flex"
       style={{
         width: "100px",
         height: "100vh",
-        boxShadow: "0px 0px 2px rgba(0, 0, 0, 0.25)",
+        borderRight: "2px solid rgba(0, 0, 0, 0.10)",
       }}
     >
       <Nav.Item>
@@ -72,7 +71,7 @@ function Dashboard() {
         <Nav.Item>
           <Nav.Link eventKey="logo">
             <Image
-              src={user}
+              src={profile}
               alt="User"
               fluid
               roundedCircle
